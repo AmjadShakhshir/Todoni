@@ -36,4 +36,5 @@ func DBconn() {
 		DB = db
 
     db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.Todo{})
 }
