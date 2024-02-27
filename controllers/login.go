@@ -18,7 +18,7 @@ import (
 func Login(c *fiber.Ctx) error {
     var data map[string]string
 
-    err := godotenv.Load(".env") // adjust the path according to your .env file location
+    err := godotenv.Load(".env")
         if err != nil {
             log.Fatalf("Error loading .env file")
         }

@@ -8,7 +8,7 @@ import (
 func Setup(app *fiber.App) {
     api := app.Group("/users")
 
-    // api.Get("/", controllers.User)
+    api.Get("/", controllers.GetUser)
 
     api.Post("/register", controllers.Register)
 
