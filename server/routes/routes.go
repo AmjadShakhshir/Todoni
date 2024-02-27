@@ -14,5 +14,5 @@ func Setup(app *fiber.App) {
 
     api.Post("/login", controllers.Login)
 
-    // api.Post("/logout", controllers.Logout)
+    api.Post("/logout", controllers.Logout)
 }
