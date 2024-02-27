@@ -14,5 +14,4 @@ type Todo struct {
     Title     string `json:"title"`
     Content   string `json:"content"`
     Completed bool   `json:"completed"`
-    UserID    uint   `json:"user_id"`
 }
