@@ -1,18 +1,23 @@
 package routes
 
 import (
-	"github.com/AmjadShakhshir/Todoni/controllers"
+	todos "github.com/AmjadShakhshir/Todoni/controllers/todos"
+	users "github.com/AmjadShakhshir/Todoni/controllers/users"
 	"github.com/gofiber/fiber/v2"
 )
 
 func Setup(app *fiber.App) {
     api := app.Group("/users")
 
-    api.Get("/", controllers.GetUser)
+    api.Get("/", users.GetUser)
+    api.Post("/register", users.Register)
+    api.Post("/login", users.Login)
+    api.Post("/logout", users.Logout)
 
-    api.Post("/register", controllers.Register)
+    apiTodos := app.Group("/todos")
 
-    api.Post("/login", controllers.Login)
-
-    api.Post("/logout", controllers.Logout)
+    apiTodos.Get("/", todos.GetTodos)
+    apiTodos.Post("/", todos.CreateTodo)
+    apiTodos.Delete("/:id", todos.DeleteTodo)
+    apiTodos.Patch("/:id/done", todos.MarkItDone)
 }
