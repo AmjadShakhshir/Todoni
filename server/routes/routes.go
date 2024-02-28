@@ -7,14 +7,14 @@ import (
 )
 
 func Setup(app *fiber.App) {
-    api := app.Group("/users")
+    api := app.Group("/api/users")
 
     api.Get("/", users.GetUser)
     api.Post("/register", users.Register)
     api.Post("/login", users.Login)
     api.Post("/logout", users.Logout)
 
-    apiTodos := app.Group("/todos")
+    apiTodos := app.Group("/api/todos")
 
     apiTodos.Get("/", todos.GetTodos)
     apiTodos.Post("/", todos.CreateTodo)
