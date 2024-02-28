@@ -1,8 +1,15 @@
 {
-    "rewrites": [
+    "version": 2,
+    "builds": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+        "src": "main.go",
+        "use": "@vercel/go"
+        }
+    ],
+    "routes": [
+        {
+        "src": "/(.*)",
+        "dest": "todoni"
         }
     ]
 }
