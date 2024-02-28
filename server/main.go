@@ -19,6 +19,10 @@ func main() {
 		AllowOrigins:    "http://localhost:3000",
     }))
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Server is running")
+	})
+
     routes.Setup(app)
 
     log.Fatal(app.Listen(":8000"))
